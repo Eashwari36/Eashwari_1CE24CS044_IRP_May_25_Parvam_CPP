@@ -1,0 +1,96 @@
+1.   #include <iostream>
+using namespace std;
+
+class Car {
+public:
+    int wheels;
+    int seats;
+    int doors;
+    char engineType[10];
+    char model[10];
+    float fuelCap;
+
+    void setCarDetails(int w, float fc) {
+        wheels = w;
+        fuelCap = fc;
+    }
+
+    void getCarDetails() {
+        cout << "No of Wheels: " << wheels << endl;
+        cout << "Fuel Capacity: " << fuelCap << " liters" << endl;
+    }
+
+    void getFuelCost(float price) {
+        cout << "Fuel cost: " << (fuelCap * price) << endl;
+    }
+};
+
+int main() {
+    Car c1, c2;
+
+    c1.setCarDetails(4, 18);
+    c2.setCarDetails(4, 12);
+
+    c1.getCarDetails();
+    c2.getCarDetails();
+
+    c1.getFuelCost(84);
+    c2.getFuelCost(100);
+
+    return 0;
+}
+
+
+2.  #include <iostream>
+using namespace std;
+
+class Car {
+public:
+    int wheels;
+    int seats;
+    int doors;
+    float fuelCap;
+    string modelNo;
+    string engineType;
+
+    void setCarDetails(int swheels, float sfuelCap, int sseats, int sdoors, string sengineType, string smodelNo) {
+        wheels = swheels;
+        fuelCap = sfuelCap;
+        seats = sseats;
+        doors = sdoors;
+        engineType = sengineType;
+        modelNo = smodelNo;
+    }
+
+    void getCarDetails() {
+        cout<<"\n----------start car details-----------"<<endl;
+        cout << "No of Wheels: " << wheels << endl;
+        cout << "No of Seats: " << seats << endl;
+        cout << "No of Doors: " << doors << endl;
+        cout << "Fuel Capacity: " << fuelCap << endl;
+        cout << "Model No: " << modelNo << endl;
+        cout << "Engine Type: " << engineType << endl;
+        cout<<"\n----------end car details-----------"<<endl;
+    }
+
+    void getFuelCost(float price) {
+        cout << "Fuel cost: " << (fuelCap * price) <<endl;
+    }        
+    
+};
+
+int main() {
+    Car c1, c2;
+    
+    c1.setCarDetails(4, 18, 5, 4, "V8", "ModelX");
+    c2.setCarDetails(4, 12, 6, 4, "V6", "ModelY");
+    cout<<"\n----------C1 car details-----------"<<endl;
+    c1.getCarDetails();
+    cout<<"\n----------C2 car details-----------"<<endl;
+    c2.getCarDetails();
+    c1.getFuelCost(84);
+    c2.getFuelCost(100);
+
+
+    return 0;
+}
